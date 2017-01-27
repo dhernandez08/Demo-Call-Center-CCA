@@ -1,0 +1,6 @@
+temp/
+.idea/
+coverage
+.env
+npm-debug.log
+.idea/

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="copyright" content="Copyright © 2016 I.B.M. All rights reserved.
+         Licensed under the Apache License, Version 2.0 (the “License”);
+         you may not use this file except in compliance with the License.
+         You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+         Unless required by applicable law or agreed to in writing, software
+         distributed under the License is distributed on an “AS IS” BASIS,
+         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+         See the License for the specific language governing permissions and
+         limitations under the License.">
+    <meta name="description" content="Watson Conversation Service Car Dashboard Sample Application">
+    <title>Watson Conversation Service Car Dashboard Sample Application</title>
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/conversation2.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    
+    <!-- endbuild --> 
+</head>
+<body>
+    <!--The main car dashboard SVG-->
+    <!-- exit call button -->   
+    <input type="button" value="PLAY"  onclick="NuanceFlow.play()">
+    <audio id="audioNuance" ></audio>
+    <div id="svg_wrapper">
+        <div id="output-audio" class="audio-on" onclick="TTSModule.toggle()" value="ON"></div>  
+        
+        <div id="svg_size">
+            <svg id="svg_canvas" ></svg>
+        </div>
+        <div class="chatUi">
+            <div id="chat-scroll-wrapper"><div id="chat-flow"></div></div>
+            <div id="input-wrapper" class="responsive-columns-wrapper">
+                <div id="input-mic-holder">
+                    <div id="input-mic" class="inactive-mic" onclick="STTModule.micON()"></div>
+                </div>
+              <div id="input-mic-holder2">
+              <div id="close-mic" class="inactive-close" onclick="NuanceFlow.endCall()"></div>
+               </div>
+
+                <label for="user-input" class="input-outline responsive-column">
+                  <input id="user-input" type="text" placeholder="Hablame">
+                   <div id="close-mic" class="inactive-close" onclick="NuanceFlow.endCall()"></div>
+                </label>
+            </div>
+        </div> 
+    </div>
+    <script>
+        // For cloaking. Done in JS for the case of disabled JS (i.e. even though not much will work, something will be displayed.)
+        document.body.style.visibility = 'visible';
+    </script>
+   
+    <!-- endbuild -->
+    <!-- build:js dashboard.min.js -->
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/conversation.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/test.js"></script>
+   
+    
+    <!-- endbuild -->
+    <script src="ibm/watson-speech.min.js"></script>
+    <script src="ibm/speech-to-text.js"></script>
+    <script src="ibm/text-to-speech.js"></script>
+</body>
+
+</html>

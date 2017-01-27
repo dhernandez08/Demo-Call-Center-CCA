@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<title>ATENCION A CLIENTES</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="copyright" content="Copyright © 2016 I.B.M. All rights reserved.
+         Licensed under the Apache License, Version 2.0 (the “License”);
+         you may not use this file except in compliance with the License.
+         You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+         Unless required by applicable law or agreed to in writing, software
+         distributed under the License is distributed on an “AS IS” BASIS,
+         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+         See the License for the specific language governing permissions and
+         limitations under the License.">
+<meta name="description" content="Watson Conversation Service Car Dashboard Sample Application">
+<title>Call Center Sample Application</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/conversation.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+
+<link rel="stylesheet" type="text/css" href="css/design.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<body>
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-btn-block w3-hover-white">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#CallCenter" class="w3-btn-block w3-hover-white">CALL CENTER</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#Información" class="w3-btn-block w3-hover-white">INFORMACION</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+
+
+<header class="bgimg w3-display-container w3-greyscale id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-xlarge w3-hide-small">
+    <span class="w3-tag">Horario de 9:00am a 5:00pm</span>
+    <span class="w3-tag">San Jose, Costa Rica</span>
+  </div>
+  <div class="w3-display-right w3-center">
+    <span class=".w3-opacity-max" style="font-size:40px">Agente virtual Watson <br>Call Center</span>
+  </div>
+  
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-light-grey w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="CallCenter">
+  <div class="w3-content" style="max-width:700px">
+   <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-padding-left w3-padding-right">ATENCION A CLIENTES</span></h5>
+   <h5 class="w3-center"><div id="agent-selection" class="w3-padding-left w3-padding-right button-xsmall" onclick="TTSModule.changeAgent()" value="FEM"><img id="avatar-image22"  src ="images/change.png"> Cambiar Agente</div></h5>
+    
+
+<!-- Call center agent -->      
+    <div class="divavatar">
+    <img id="avatar-image" class="avatar" value="FEM" src ="images/AgentFem.png">
+    </div>
+
+<!-- Mute agent -->   
+    <div id="output-audio" class="audio-on" onclick="TTSModule.toggle()" value="ON"></div> 
+
+ <!-- call button -->   
+    <div id="input-mic-holder">
+    <div id="input-mic" class="inactive-mic" onclick="STTModule.micON()"></div>
+    </div>
+
+ <!-- exit call button -->   
+    <div id="input-mic-holder2">
+    <div id="close-mic" class="inactive-close" onclick="NuanceFlow.endCall()"></div>
+    </div>
+
+   <!-- chat hidden-->   
+  <div id="svg_wrapper">
+  <div class="chatUi" style="visibility:hidden" >
+  <div id="chat-scroll-wrapper"><div id="chat-flow"></div></div>
+  <div id="input-wrapper" class="responsive-columns-wrapper">
+  <label for="user-input" class="input-outline responsive-column">
+  <input id="user-input" type="text" placeholder="Hablame">
+  </label>
+  </div>
+ </div> 
+    
+  </div>
+    <p> Con el objetivo de estar más cerca de nuestros clientes, el servicio de agente virtual le apoyará con total disposición en 
+      en los trámites de validación de créditos. Ahora más fácil que nunca y con gran disponibilidad el agente virtual 
+      le acompañará en la gestión de  trámites. </p>
+    <p>Inicia la conversación con nuestro agente por medio del ícono de llamada y en segundos un asesor virtual le estará atendiendo. </p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"Siempre  estará disponible el asesor virtual. El mismo lo asesora en las gestiones que ha sido entrenado." </i></p>
+      <p>Atención exclusiva</p>
+    </div>
+    <p><strong>Horario agente virtual:</strong> Todo el día</p>
+    <p><strong>Dirección:</strong> Escazú, Costa Rica.</p>
+  </div>
+</div>
+
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="Información" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide w3-padding-left w3-padding-right">INFORMACION</span></h5>
+    <p>Este es un demo desarrollado por Cognitiva. Utilizando los productos de Watson de IBM respectivamente: Conversation, Text to Speech y Speech to Text.
+      Si desea conocer más sobre nuestras soluciones por favor visite nuestra página web. </p>  <a href="http://www.cognitiva.la" title="Cognitiva" target="_blank" class="w3-hover-text-green">http://www.cognitiva.la</a>
+   
+    <p><span class="w3-tag">Nuestra misión</span> Proporcionamos soluciones de computación cognitiva con el propósito de mejorar la calidad de vida en Latinoamérica, transformando la manera en que sus sociedades toman decisiones. </p>
+
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Demo by <a href="http://www.cognitiva.la" title="Cognitiva" target="_blank" class="w3-hover-text-green">Cognitiva</a></p>
+</footer>
+
+
+<script>
+
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("HOME");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("CALL CENTER");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "Información";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+
+</script>
+
+
+<script>
+        // For cloaking. Done in JS for the case of disabled JS (i.e. even though not much will work, something will be displayed.)
+        document.body.style.visibility = 'visible';
+    </script>
+   
+    <!-- endbuild -->
+    <!-- build:js dashboard.min.js -->
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/conversation.js"></script>
+    <script src="js/global.js"></script>
+     <script src="js/test.js"></script>
+   
+    <!-- endbuild -->
+    <script src="ibm/watson-speech.min.js"></script>
+    <script src="ibm/speech-to-text.js"></script>
+    <script src="ibm/text-to-speech.js"></script>
+
+</body>
+</html>
